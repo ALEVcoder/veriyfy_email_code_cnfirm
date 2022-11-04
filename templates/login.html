@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <form method="post" class="box">
+                    {% csrf_token %}
+                    <h1>Login</h1>
+                    <p class="text-muted"> Please enter your login and password!</p>
+                    <input type="text" name="username" placeholder="Username">
+                    <input type="password" name="password" placeholder="Password">
+                    <a class="forgot text-muted">Forgot password?</a>
+                    <a href="{% url 'register' %}" class="forgot text-muted">Sign Up</a>
+                    <input type="submit" value="Login">
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'auth/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'auth/jquery.min.js' %}"></script>
+</body>
+</html>
